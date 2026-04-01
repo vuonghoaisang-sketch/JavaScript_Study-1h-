@@ -1,22 +1,12 @@
-const tinhDiemTrungBinh = (toan, van, anh) => {
-  return (toan + van + anh) / 3;
-};
-const xepLoai = (diemTrungBinh) => {
-  if (diemTrungBinh >= 9) {
-    return "Xuất sắc";
-  } else if (diemTrungBinh >= 8 && diemTrungBinh < 9) {
-    return "Giỏi";
-  } else if (diemTrungBinh >= 7 && diemTrungBinh < 8) {
-    return "Khá";
-  } else if (diemTrungBinh >= 5 && diemTrungBinh < 7) {
-    return "Trung bình";
-  } else {
-    return "Yếu";
-  }
-};
-const diemToan = 9;
-const diemVan = 8;
-const diemAnh = 7;
+console.log("SangVuong");
 
-console.log(`Diem trung binh: ${tinhDiemTrungBinh(diemToan, diemVan, diemAnh)}
-XepLoai: ${xepLoai(tinhDiemTrungBinh(diemToan, diemVan, diemAnh))}`);
+const score = [10, 8, 3, 7, 5];
+
+// score.forEach((item, index) => {
+//   console.log(`Điểm số thứ ${index + 1} là: ${item}`);
+// });
+const scorex2 = score.map((item, index) => {
+  return item * 2;
+});
+console.log(score);
+console.log(scorex2);
