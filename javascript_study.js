@@ -1,33 +1,39 @@
-const sv1 = {
-  username: "SangVuong",
-  score: 100,
+const pr1 = {
+  name: "Ao thun",
+  price: 500,
+  inStock: true,
+};
+const pr2 = {
+  name: "Ao so mi",
+  price: 600,
+  inStock: true,
+};
+const pr3 = {
+  name: "Ao khoac",
+  price: 700,
+  inStock: false,
+};
+const pr4 = {
+  name: "Ao len",
+  price: 800,
+  inStock: true,
+};
+const pr5 = {
+  name: "Ao lot",
+  price: 900,
+  inStock: false,
 };
 
-const sv2 = {
-  username: "Long",
-  score: 1,
-};
+const products = [pr1, pr2, pr3, pr4, pr5];
 
-const sv3 = {
-  username: "JohnDoe",
-  score: 80,
-};
-const sinhvien = [sv1, sv2, sv3];
+products.push({
+  name: "Ao vest",
+  price: 1000,
+  inStock: true,
+});
+let newArray = products.filter((item, index) => item.inStock === true);
+console.log(newArray);
 
-// sinhvien.forEach((item, index) => {
-//   console.log(index + 1, item.username);
-// });
-const person = {
-  name: "SangVuong",
-  age: 20,
-  address: "Thanh Hoa",
-};
-// for (let key in person) {
-//   console.log(key, person[key]);
-// }
-// for (let value of Object.values(person)) {
-//   console.log(value);
-// }
-for (let [key, value] of Object.entries(person)) {
-  console.log(key, value);
+for (const key in pr1) {
+  console.log(key, pr1[key]);
 }
