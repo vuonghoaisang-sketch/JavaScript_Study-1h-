@@ -1,15 +1,13 @@
-const myBtnElement = document.querySelector(".myBtn");
-const myTextElement = document.querySelector(".myText");
-const backBtnElement = document.querySelector(".backBtn");
+const myBtnSubmid = document.getElementById("SubmidBtn");
+const input = document.getElementById("Name");
 
-myBtnElement.addEventListener("click", () => {
-  console.log("clicked");
-  myTextElement.style.color = "red";
-  myTextElement.style.backgroundColor = "blue";
-});
-
-backBtnElement.addEventListener("click", () => {
-  console.log("clicked");
-  myTextElement.style.color = "black";
-  myTextElement.style.backgroundColor = "white";
+const prev = document.querySelector(".prev");
+const prevName = localStorage.getItem("SangVuong");
+if (prevName) {
+  prev.innerHTML = `<b>${prevName}</b>`;
+}
+myBtnSubmid.addEventListener("click", function () {
+  // console.log(input.value);
+  localStorage.setItem("SangVuong", input.value);
+  document.querySelector(".message").innerHTML = `<b>${input.value}</b>`;
 });
