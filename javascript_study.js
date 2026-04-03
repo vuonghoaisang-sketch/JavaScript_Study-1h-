@@ -1,39 +1,15 @@
-const pr1 = {
-  name: "Ao thun",
-  price: 500,
-  inStock: true,
-};
-const pr2 = {
-  name: "Ao so mi",
-  price: 600,
-  inStock: true,
-};
-const pr3 = {
-  name: "Ao khoac",
-  price: 700,
-  inStock: false,
-};
-const pr4 = {
-  name: "Ao len",
-  price: 800,
-  inStock: true,
-};
-const pr5 = {
-  name: "Ao lot",
-  price: 900,
-  inStock: false,
-};
+const myBtnElement = document.querySelector(".myBtn");
+const myTextElement = document.querySelector(".myText");
+const backBtnElement = document.querySelector(".backBtn");
 
-const products = [pr1, pr2, pr3, pr4, pr5];
-
-products.push({
-  name: "Ao vest",
-  price: 1000,
-  inStock: true,
+myBtnElement.addEventListener("click", () => {
+  console.log("clicked");
+  myTextElement.style.color = "red";
+  myTextElement.style.backgroundColor = "blue";
 });
-let newArray = products.filter((item, index) => item.inStock === true);
-console.log(newArray);
 
-for (const key in pr1) {
-  console.log(key, pr1[key]);
-}
+backBtnElement.addEventListener("click", () => {
+  console.log("clicked");
+  myTextElement.style.color = "black";
+  myTextElement.style.backgroundColor = "white";
+});
