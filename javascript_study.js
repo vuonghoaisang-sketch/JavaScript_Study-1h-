@@ -1,12 +1,33 @@
-console.log("SangVuong");
+const sv1 = {
+  username: "SangVuong",
+  score: 100,
+};
 
-const score = [10, 8, 3, 7, 5];
+const sv2 = {
+  username: "Long",
+  score: 1,
+};
 
-// score.forEach((item, index) => {
-//   console.log(`Điểm số thứ ${index + 1} là: ${item}`);
+const sv3 = {
+  username: "JohnDoe",
+  score: 80,
+};
+const sinhvien = [sv1, sv2, sv3];
+
+// sinhvien.forEach((item, index) => {
+//   console.log(index + 1, item.username);
 // });
-const scorex2 = score.map((item, index) => {
-  return item * 2;
-});
-console.log(score);
-console.log(scorex2);
+const person = {
+  name: "SangVuong",
+  age: 20,
+  address: "Thanh Hoa",
+};
+// for (let key in person) {
+//   console.log(key, person[key]);
+// }
+// for (let value of Object.values(person)) {
+//   console.log(value);
+// }
+for (let [key, value] of Object.entries(person)) {
+  console.log(key, value);
+}
