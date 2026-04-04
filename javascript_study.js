@@ -1,15 +1,19 @@
-const myUN = document.querySelector(".UN");
-const myPW = document.querySelector(".PW");
-const myDN = document.querySelector(".DN");
+const fetchUsers = async () => {
+  const res = await fetch("http://localhost:8000/users");
+  const data = await res.json();
+  console.log("check data: ", data);
 
-myDN.addEventListener("click", function () {
-  if (myUN.value === "hoidanit@gmail.com" && myPW.value === "123456") {
-    alert("Dang nhap thanh cong!");
-    myUN.style.borderColor = "black";
-    myPW.style.borderColor = "black";
-  } else {
-    alert("Dang nhap that bai!");
-    myUN.style.borderColor = "red";
-    myPW.style.borderColor = "red";
+  //insert data to html
+  const tbody = document.querySelector("#users tbody");
+  if (data && data.length) {
+    data.forEach((user, index) => {
+      tbody.innerHTML += `
+      <tr>
+        <td>${user.id}</td>
+        <td>${user.name}</td>
+        <td>${user.email}</td>
+      </tr>`;
+    });
   }
-});
+};
+fetchUsers();
