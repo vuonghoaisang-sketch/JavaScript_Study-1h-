@@ -1,13 +1,15 @@
-const myBtnSubmid = document.getElementById("SubmidBtn");
-const input = document.getElementById("Name");
+const myUN = document.querySelector(".UN");
+const myPW = document.querySelector(".PW");
+const myDN = document.querySelector(".DN");
 
-const prev = document.querySelector(".prev");
-const prevName = localStorage.getItem("SangVuong");
-if (prevName) {
-  prev.innerHTML = `<b>${prevName}</b>`;
-}
-myBtnSubmid.addEventListener("click", function () {
-  // console.log(input.value);
-  localStorage.setItem("SangVuong", input.value);
-  document.querySelector(".message").innerHTML = `<b>${input.value}</b>`;
+myDN.addEventListener("click", function () {
+  if (myUN.value === "hoidanit@gmail.com" && myPW.value === "123456") {
+    alert("Dang nhap thanh cong!");
+    myUN.style.borderColor = "black";
+    myPW.style.borderColor = "black";
+  } else {
+    alert("Dang nhap that bai!");
+    myUN.style.borderColor = "red";
+    myPW.style.borderColor = "red";
+  }
 });
